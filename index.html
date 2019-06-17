@@ -62,15 +62,17 @@
           * Why?
             - Too much...too little!
             - [Unneeded syntax](https://github.com/ethereum/vyper/issues/1359)
-            - We're already extending the Python syntax (`contract`
-            keyword, etc.)
+            - We're already mucking with Python's AST/syntax
+              + [`contract` keyword pre-processing](https://github.com/ethereum/vyper/blob/1a8e1cc9f0b13f988ab29104e62290175f1fb10c/vyper/parser/pre_parser.py#L69)
+              + [source code annotation](https://github.com/ethereum/vyper/blob/1a8e1cc9f0b13f988ab29104e62290175f1fb10c/vyper/parser/parser_utils.py#L836-L856)
+              + [unary subtraction removal](https://github.com/ethereum/vyper/blob/1a8e1cc9f0b13f988ab29104e62290175f1fb10c/vyper/parser/parser_utils.py#L836-L856)
         </section>
         <section data-markdown>
           ## Custom Vyper parser
 
           * How?
-            - Beginning with custom AST classes
-            - Swapping out the code that produces the AST
+            - [Beginning with custom AST classes](https://github.com/ethereum/vyper/pull/1382)
+            - [Swapping out the code that produces the AST](https://github.com/davesque/vyper-parser)
         </section>
       </div>
     </div>
