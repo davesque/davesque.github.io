@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adjoints, Inverses, and AIs | davesque.github.io</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5MZ08VGDGY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5MZ08VGDGY');
+</script>
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Adjoints, Inverses, and AIs</span></h1>
+<h2 class="author">David Sanders</h2>
+<h2 class="date">2023/02/28</h2>
+</div>
+
+<main>
+<p>I&rsquo;ve been doing some reading about &ldquo;adjoints&rdquo; which are often contrasted with
+&ldquo;inverses&rdquo; in mathematics.  Here&rsquo;s a simple example illustrating the behavior
+of a matrix inverse:</p>
+<p>\[
+\begin{align}
+A\mathbf{x} &amp;= \mathbf{y} \\
+\implies \mathbf{x} &amp;= A^{-1}\mathbf{y}
+\end{align}
+\]</p>
+<p>We&rsquo;re just seeing that \(A^{-1}\) undoes the transformation done by \(A\)
+to \(\mathbf{x}\) to get \(\mathbf{y}\).  This is only something that&rsquo;s
+possible for &ldquo;nice&rdquo; (non-singular) matrices. Better hope your matrix is nice.
+By contrast, the &ldquo;adjoint&rdquo; of \(A\) (often denoted \(A^{*}\)) works in
+this way:</p>
+<p>\[
+\begin{align}
+A\mathbf{x} &amp;\cdot \mathbf{y} \\
+= \mathbf{x} &amp;\cdot A^{*}\mathbf{y}
+\end{align}
+\]</p>
+<p>&hellip;where &ldquo;\(\cdot\)&rdquo; is just the inner product (dot product) defined for a
+vector space.  This can be done for any complex valued matrix<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>There&rsquo;s a reason I placed the &ldquo;\(=\)&rdquo; (in the first system of equations) in
+the same horizontal position as the &ldquo;\(\cdot\)&rdquo; (in the second system).  So
+too for the &ldquo;\(\implies\)&rdquo; and the &ldquo;\(=\)&rdquo; in the second. They&rsquo;re
+positioned similarly because they seem to play similar roles in either example.
+Between the examples, we have the following analogues:</p>
+<p>\[
+\begin{array}{r|c|c}
+\text{action} &amp; A^{-1} &amp; A^{*} \\
+\hline
+\text{comparison} &amp; = &amp; \cdot \\
+\hline
+\text{relation} &amp; \implies &amp; =
+\end{array}
+\]</p>
+<p>More explicitly, it seems that inverses establish a <em>directional</em> relationship
+between equalities through implication<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.  On the other hand, adjoints
+establish a <em>directionless</em> relationship between dot products through equality
+(by showing how those dot products can be equal).</p>
+<p>It never occurred to me quite this way before.  The idea of equality and the
+dot product seem closely related.  Equality answers the question, &ldquo;Are these
+things <em>the same</em>?  Yes or no?&rdquo;  Dot products answer the question, &ldquo;Are these
+things <em>similar</em>?  Answer as you please (between \(0\) and \(|\mathbf{x}|
+|\mathbf{y}|\cos \theta\))<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.&rdquo;  In that sense, the dot product is really like a
+more communicative kind of equality comparison.</p>
+<p>In linear algebra, everything seems to generalize a more basic concept.  Those
+generalizations admit a much broader range of behaviors that could occur
+between objects that we&rsquo;re working with. The dot product generalizes equality.
+Even the basic constituents of linear algebra (vectors) sort of generalize the
+concept of individual values (scalars).</p>
+<p>Another generalization is the singular value decomposition (SVD).  The
+eigen-decomposition can be viewed as a special case of the SVD for normal
+matrices<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.  But if your matrix isn&rsquo;t that nice, don&rsquo;t worry!  You can still
+do SVD for literally any complex (or real) valued matrix and get something with
+many of the same qualities.  It&rsquo;s just that SVD sometimes also coincides with
+the eigen-decomposition which is more limited.  Maybe that&rsquo;s the SVD
+periodically poking its head out from the ocean of high dimensionality.</p>
+<p>On some level, this speaks to the utility of linear algebra in the context of
+machine learning.  Linear algebra, and related topics like tensor calculus, are
+systems that generalize processes into high dimensions where much more
+interesting things are possible.  That&rsquo;s a nice analogy for comparing tasks
+that are easily performed by computers to those easily performed by humans.
+What&rsquo;s the difference between those things?  Well, in a way, it&rsquo;s the
+dimensionality! There&rsquo;s much more detail in the &ldquo;real&rdquo; world (more dimensions).
+If you want exact answers, they&rsquo;re hard to find and often not that interesting.</p>
+<p>Put another way, yes you can check for exact equality between high dimensional
+vectors, but why would you even want to know that in many cases?  That&rsquo;s like
+doubting if one apple could be as good as another because it&rsquo;s made up of
+different atoms.  The notion of strict equality covers so little of the
+semantic territory that is possible with a high dimensional vector.  Why not
+ask a question that always tends to give more information in the answer?  Why
+not take the dot product? Likewise, why get hung up on not having the inverse
+when you can have the adjoint?</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>And, by extension, any real-valued \(A\) matrix has an adjoint
+\(A^T\) (its transpose).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>We say &ldquo;directional&rdquo; here because saying that \(P \implies Q\) does
+<em>not</em> mean you can just turn around and say \(Q \implies P\).  So
+implication is directional.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>&hellip;and with a nice smooth curve too!&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>A &ldquo;normal&rdquo; matrix in this context means one that commutes with its
+conjugate transpose (\( A^{*}A = AA^{*} \)).&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</main>
+
+  <footer>
+  <script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  
+  <hr/>
+  © <a href="https://davesque.github.io">David Sanders</a> 2023 | <a href="https://github.com/davesque">Github</a>
+  
+  </footer>
+  </body>
+</html>
+
