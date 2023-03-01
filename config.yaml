@@ -1,0 +1,32 @@
+baseURL: "/"
+languageCode: "en-us"
+title: "davesque.github.io"
+theme: "hugo-xmin"
+
+googleAnalytics: "G-5MZ08VGDGY"
+disqusShortname: ""
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+footnotereturnlinkcontents: "↩"
+
+permalinks:
+  notes: "/notes/:year/:month/:day/:slug/"
+  posts: "/posts/:year/:month/:day/:slug/"
+
+menu:
+  main:
+    - name: Home
+      url: ""
+      weight: 1
+    - name: Subscribe
+      url: "index.xml"
+
+params:
+  description: "A website about technology and other things occasionally of interest."
+  footer: "&copy; [David Sanders](https://davesque.github.io) {Year} | [Github](https://github.com/davesque)"
+
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true
