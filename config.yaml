@@ -17,12 +17,10 @@ menu:
     - name: Home
       url: ""
       weight: 1
-    - name: Subscribe
-      url: "index.xml"
 
 params:
   description: "A website about technology and other things occasionally of interest."
-  footer: "&copy; [David Sanders](https://davesque.github.io) {Year} | [Github](https://github.com/davesque)"
+  footer: "&copy; [David Sanders](/) {Year} | [Github](https://github.com/davesque)"
 
 markup:
   highlight:
