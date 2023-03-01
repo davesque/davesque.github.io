@@ -20,7 +20,7 @@ menu:
 
 params:
   description: "A website about technology and other things occasionally of interest."
-  footer: "&copy; [David Sanders](/) {Year} | [Github](https://github.com/davesque)"
+  footer: "&copy; David Sanders {Year} | [Home](/) | [Github](https://github.com/davesque)"
 
 markup:
   highlight:
