@@ -91,7 +91,7 @@ ask a question that always tends to give more information in the answer?  Why
 not take the dot product? Likewise, why get hung up on not having the inverse
 when you can have the adjoint?
 
-[^1]: And, by extension, any real-valued \\(A\\) matrix has an adjoint
+[^1]: And, by extension, any real-valued matrix \\(A\\) has an adjoint
   \\(A^T\\) (its transpose).
 [^2]: We say "directional" here because saying that \\(P \implies Q\\) does
   *not* mean you can just turn around and say \\(Q \implies P\\).  So
