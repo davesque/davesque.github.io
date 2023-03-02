@@ -1,0 +1,74 @@
+$gap: 1rem;
+
+body {
+  font-family: Georgia, Optima, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.5;
+
+  max-width: 800px;
+  margin: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+h1 { font-size: 1.75em; }
+h2 { font-size: 1.25em; }
+h3 { font-size: 1.15em; }
+
+nav, footer, p, h1, h2, hr, ul, ol {
+  margin-top: $gap;
+  margin-bottom: $gap;
+}
+
+nav {
+  padding: 0;
+
+  li { display: inline-block; }
+}
+nav, footer {
+  text-align: right;
+  a { text-decoration: none; }
+}
+
+h1 { margin-bottom: 0; }
+h2.author, h2.date {
+  font-size: 1.25em;
+  line-height: 1.2;
+
+  margin-top: 0;
+}
+h2.date {
+  margin-bottom: 1.2em;
+}
+
+hr {
+  border: 0;
+  background: black;
+  height: 1px;
+}
+nav hr, footer hr {
+  background: linear-gradient(to right, white 0, black 20%);
+}
+
+.footnotes {
+  hr { display: none; }
+  ol {
+    padding-left: 1.1em;
+
+    &::before {
+      content: "Notes:";
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-left: -1em;
+    }
+
+    li p {
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+}
+
+footer hr {
+  margin-top: 1.1em;
+}

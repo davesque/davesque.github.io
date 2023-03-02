@@ -1,7 +1,6 @@
 ---
 title: "Adjoints, Inverses, and AIs"
 date: 2023-02-28T18:09:45-08:00
-author: David Sanders
 ---
 
 I've been doing some reading about "adjoints" which are often contrasted with
