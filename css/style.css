@@ -8,28 +8,18 @@ body {
 /* header and footer areas */
 .menu { padding: 0; }
 .menu li { display: inline-block; }
-.menu a {
+.article-meta, .menu a {
   text-decoration: none;
-}
-.menu li:not(:last-child)::after {
-  content: " | ";
+  background: #eee;
+  padding: 5px;
+  border-radius: 5px;
 }
 .menu, .article-meta, footer { text-align: center; }
-h1 {
-  font-size: 2em;
-  margin: 0.5em;
-}
-h2.author, h2.date {
-  font-size: 1.25em;
-  margin: 0em;
-}
+.title { font-size: 1.1em; }
 footer a { text-decoration: none; }
 hr {
-  border-style: solid;
-  border-width: 0.5px;
-  color: #ccc;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  border-style: dashed;
+  color: #ddd;
 }
 
 /* code */
