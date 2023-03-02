@@ -46,9 +46,9 @@ Between the examples, we have the following analogues:
 \end{array}
 \\]
 
-More explicitly, it seems that inverses establish a *directional* relationship
+More explicitly, it seems that inverses establish a bi-directional relationship
 between equalities through implication[^2].  On the other hand, adjoints
-establish a *directionless* relationship between dot products through equality
+establish a bi-directional relationship between dot products through equality
 (by showing how those dot products can be equal).
 
 It never occurred to me quite this way before.  The idea of equality and the
@@ -92,9 +92,9 @@ when you can have the adjoint?
 
 [^1]: And, by extension, any real-valued matrix \\(A\\) has an adjoint
   \\(A^T\\) (its transpose).
-[^2]: We say "directional" here because saying that \\(P \implies Q\\) does
-  *not* mean you can just turn around and say \\(Q \implies P\\).  So
-  implication is directional.
+[^2]: Technically, bi-implication.  It's of course not the case that we can
+  infer \\(Q \implies P\\) from \\(P \implies Q\\).  But the original matrix
+  \\(A\\) can be applied to both sides to "reverse the inverse".
 [^3]: ...and with a nice smooth curve too!
 [^4]: A "normal" matrix in this context means one that commutes with its
   conjugate transpose (\\( A^{\*}A = AA^{\*} \\)).
