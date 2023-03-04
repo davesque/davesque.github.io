@@ -21,6 +21,40 @@ body {
   margin: auto;
   padding-left: 1em;
   padding-right: 1em;
+
+  #sun {
+    stroke: $fg;
+    fill: $bg;
+  }
+  #moon {
+    stroke: mix($fg, $bg, 35%);
+    fill: $bg;
+  }
+
+  &.dark {
+    color: $bg;
+    background-color: $fg;
+
+    nav hr, footer hr {
+      background: linear-gradient(to right, $fg 0, $bg 20%);
+    }
+    #sun {
+      stroke: mix($bg, $fg, 35%);
+      fill: $fg;
+    }
+    #moon {
+      stroke: $bg;
+      fill: $fg;
+    }
+  }
+}
+
+#color-toggle {
+  float: left;
+  cursor: pointer;
+}
+nav hr {
+  clear: both;
 }
 
 a {

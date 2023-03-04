@@ -13,6 +13,30 @@
 
   <body>
     <nav>
+      <div id="color-toggle" title="Toggle day/night mode">
+        <svg id="sun" width="30" height="30">
+          <circle cx="15" cy="15" r="10" stroke-width="2" />
+          <line x1="15" y1="26" x2="15" y2="28" stroke-width="3" stroke-linecap="round" transform-origin="15 15" transform="rotate(0)" />
+          <line x1="15" y1="26" x2="15" y2="28" stroke-width="3" stroke-linecap="round" transform-origin="15 15" transform="rotate(45)" />
+          <line x1="15" y1="26" x2="15" y2="28" stroke-width="3" stroke-linecap="round" transform-origin="15 15" transform="rotate(90)" />
+          <line x1="15" y1="26" x2="15" y2="28" stroke-width="3" stroke-linecap="round" transform-origin="15 15" transform="rotate(135)" />
+          <line x1="15" y1="26" x2="15" y2="28" stroke-width="3" stroke-linecap="round" transform-origin="15 15" transform="rotate(180)" />
+          <line x1="15" y1="26" x2="15" y2="28" stroke-width="3" stroke-linecap="round" transform-origin="15 15" transform="rotate(225)" />
+          <line x1="15" y1="26" x2="15" y2="28" stroke-width="3" stroke-linecap="round" transform-origin="15 15" transform="rotate(270)" />
+          <line x1="15" y1="26" x2="15" y2="28" stroke-width="3" stroke-linecap="round" transform-origin="15 15" transform="rotate(315)" />
+        </svg>
+        <svg id="moon" width="30" height="30" transform="rotate(-15)">
+          <path d="
+                   M 15 3
+                   A 12 12 0 0 0 15 27
+                   A 17 17 0 0 1 15 3
+                   " stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+
+      {{ $colorToggleJs := resources.Get "js/colorToggle.js" | js.Build | resources.Minify | resources.Fingerprint }}
+      <script src="{{ $colorToggleJs.Permalink }}"></script>
+
       <ul class="menu">
         {{ range .Site.Menus.main }}
         <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
