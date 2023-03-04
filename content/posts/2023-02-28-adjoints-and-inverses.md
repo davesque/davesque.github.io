@@ -82,13 +82,12 @@ dimensionality! There's much more detail in the "real" world (more dimensions).
 If you want exact answers, they're hard to find and often not that interesting.
 
 Put another way, yes you can check for exact equality between high dimensional
-vectors, but why would you even want to know that in many cases?  That's like
-doubting if one apple could be as good as another because it's made up of
-different atoms.  The notion of strict equality covers so little of the
-semantic territory that is possible with a high dimensional vector.  Why not
-ask a question that always tends to give more information in the answer?  Why
-not take the dot product? Likewise, why get hung up on not having the inverse
-when you can have the adjoint?
+vectors, but is that really all that useful?  That's like doubting if one apple
+could taste as good as another if it's made up of different atoms.  The notion
+of strict equality covers so little of the semantic territory that is possible
+with a high dimensional vector.  Why not ask a question that always yields more
+information?  Why not take the dot product? Likewise, why get hung up on not
+having the inverse when you can have the adjoint?
 
 [^1]: And, by extension, any real-valued matrix \\(A\\) has an adjoint
   \\(A^T\\) (its transpose).
