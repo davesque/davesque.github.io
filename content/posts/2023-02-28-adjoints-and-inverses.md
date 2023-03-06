@@ -8,10 +8,10 @@ I've been doing some reading about "adjoints" which are often contrasted with
 of a matrix inverse:
 
 \\[
-\begin{align}
+\begin{align\*}
   A\mathbf{x} &= \mathbf{y} \\\\
   \implies \mathbf{x} &= A^{-1}\mathbf{y}
-\end{align}
+\end{align\*}
 \\]
 
 We're just seeing that \\(A^{-1}\\) undoes the transformation done by \\(A\\)
@@ -21,10 +21,10 @@ By contrast, the "adjoint" of \\(A\\) (often denoted \\(A^{\*}\\)) works in
 this way:
 
 \\[
-\begin{align}
+\begin{align\*}
   A\mathbf{x} &\cdot \mathbf{y} \\\\
   = \mathbf{x} &\cdot A^{*}\mathbf{y}
-\end{align}
+\end{align\*}
 \\]
 
 ...where "\\(\cdot\\)" is just the inner product (dot product) defined for a
