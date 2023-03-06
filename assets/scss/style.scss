@@ -2,13 +2,17 @@ $gap: 1rem;
 $sans_serif: Helvetica, Arial, sans-serif;
 $serif: Georgia, serif;
 
-$page_hue: 300;
+$page_hue: 210;
 $link_hue: 210;
 
-$fg: hsl($page_hue, 10%, 14%);
-$bg: hsl($page_hue, 10%, 97%);
-$link: hsl($link_hue, 60%, 50%);
-$visited: hsl($link_hue, 35%, 40%);
+$fg: hsl($page_hue, 10%, 18%);
+$bg: hsl($page_hue, 10%, 95%);
+
+$dark_fg: $bg;
+$dark_bg: darken($fg, 4%);
+
+$link: hsl($link_hue, 80%, 55%);
+$visited: hsl($link_hue, 45%, 40%);
 
 body {
   font-family: $serif;
@@ -34,19 +38,19 @@ body {
   }
 
   &.dark {
-    color: $bg;
-    background-color: $fg;
+    color: $dark_fg;
+    background-color: $dark_bg;
 
     nav hr, footer hr {
-      background: linear-gradient(to right, $fg 0, $bg 20%);
+      background: linear-gradient(to right, $dark_bg 0, $dark_fg 20%);
     }
     #sun {
-      stroke: mix($bg, $fg, 35%);
-      fill: $fg;
+      stroke: mix($dark_fg, $dark_bg, 35%);
+      fill: $dark_bg;
     }
     #moon {
-      stroke: $bg;
-      fill: $fg;
+      stroke: $dark_fg;
+      fill: $dark_bg;
     }
   }
 }
