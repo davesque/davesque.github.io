@@ -5,25 +5,23 @@ $serif: Georgia, serif;
 $page_hue: 210;
 $link_hue: 210;
 
-$fg: hsl($page_hue, 10%, 18%);
-$bg: hsl($page_hue, 10%, 95%);
+$fg: hsl($page_hue, 10%, 15%);
+$bg: hsl($page_hue, 10%, 100%);
 
-$dark_fg: $bg;
-$dark_bg: darken($fg, 4%);
+$dark_fg: hsl($page_hue, 10%, 95%);
+$dark_bg: hsl($page_hue, 10%, 14%);
 
 $link: hsl($link_hue, 80%, 55%);
 $visited: hsl($link_hue, 45%, 40%);
 
 body {
   font-family: $serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.55;
   color: $fg;
   background-color: $bg;
 
-  .katex {
-    font-size: 1.1em;
-  }
+  .katex { font-size: 1.1em; }
 
   max-width: 700px;
   margin: auto;
@@ -80,9 +78,9 @@ h1, h2, h3, h4, h5 {
   line-height: 1.3;
 }
 h1 { font-size: 1.75em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.25em; }
-h4 { font-size: 1.15em; }
+h2 { font-size: 1.35em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.1em; }
 h5 { font-size: 1em; }
 
 nav, footer, p, h1, h2, hr, ul, ol {

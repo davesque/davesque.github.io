@@ -2,8 +2,6 @@
 title: Home
 ---
 
-## About
-
 Hey there!
 
 This is a blog about technology and other topics of occasional interest.
