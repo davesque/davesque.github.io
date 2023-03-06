@@ -40,4 +40,4 @@ joyfulness.  It can be a balm for self-doubt.  Just remember why you did that
 thing to begin with.  You did it because you enjoy it.  At the end of the day,
 that's all that really matters.*
 
-[^1]: Of course, the "who" could be oneself.
+[^1]: Of course, the "who" could be your own self.
