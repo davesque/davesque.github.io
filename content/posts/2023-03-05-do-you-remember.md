@@ -32,4 +32,12 @@ sharing the knowledge or details of the process.  I believe that a joyful
 intellectualism could be one of the most healing balms we could apply to our
 society.*
 
+*Pursuit of that joy can also be a strong justification for undertaking
+creative work.  It can work to alleviate doubts about the value of that work.
+It may be true that some creative product is derivative, redundant, boring,
+etc. etc.  However, it shouldn't matter if the impulse was to pursue that
+joyfulness.  It can be a balm for self-doubt.  Just remember why you did that
+thing to begin with.  You did it because you enjoy it.  At the end of the day,
+that's all that really matters.*
+
 [^1]: Of course, the "who" could be oneself.
