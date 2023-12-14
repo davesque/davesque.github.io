@@ -49,10 +49,10 @@ movements before they happen and *know* that they will happen as you imagine.
 Nothing separates you from the instrument.  Your mind has been filled with
 music.
 
-And then, you have your answer as to the question: why do anything?  Do
-something simply to have it fill your mind.  It doesn't matter how much better
-or worse you do it compared to the next person.  Do it because it gives you the
-feeling of unity.
+And then, you have your answer to the question: why do anything?  Do something
+simply to have it fill your mind.  It doesn't matter how much better or worse
+you do it compared to the next person.  Do it because it gives you the feeling
+of unity.
 
 This idea applies to anything.  If you can't find the enjoyment and wonder in
 an activity, it will be hard to learn much from it.  Granted, our modern world
