@@ -10,7 +10,7 @@ might not be clear what anyone could be getting at by asking such a question.
 So let's describe how a person might come to ask something like this.
 
 Pursuing any kind of creative endeavour can be emotionally challenging.  One of
-the most common struggles that comes up is in trying to convince oneself that
+the most common struggles that comes up is in trying to convince yourself that
 whatever you have to say is important.  We live in an age of informational
 abundance.  That includes reputational information.  The pantheon of famous
 people is always in plain view.  It's easy to feel insignificant by comparison.  
