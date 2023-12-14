@@ -1,6 +1,6 @@
 ---
 title: "Why Do Anything?"
-date: 2023-12-14T15:54:23-07:00
+date: 2023-12-14T12:00:00-07:00
 draft: false
 ---
 
