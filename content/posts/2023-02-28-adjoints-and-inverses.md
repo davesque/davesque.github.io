@@ -3,22 +3,19 @@ title: "Adjoints, Inverses, and AIs"
 date: 2023-02-28T18:09:45-08:00
 ---
 
-I've been doing some reading about "adjoints" which are often contrasted with
-"inverses" in mathematics.  Here's a simple example illustrating the behavior
-of a matrix inverse:
+Here's a simple example showing the behavior of a matrix inverse:
 
 \\[
 \begin{align\*}
   A\mathbf{x} &= \mathbf{y} \\\\
-  \implies \mathbf{x} &= A^{-1}\mathbf{y}
+  \iff \mathbf{x} &= A^{-1}\mathbf{y}
 \end{align\*}
 \\]
 
-We're just seeing that \\(A^{-1}\\) undoes the transformation done by \\(A\\)
-to \\(\mathbf{x}\\) to get \\(\mathbf{y}\\).  This is only something that's
-possible for "nice" (non-singular) matrices. Better hope your matrix is nice.
-By contrast, the "adjoint" of \\(A\\) (often denoted \\(A^{\*}\\)) works in
-this way:
+We're seeing that \\(\mathbf{y}\\) is \\(\mathbf{x}\\) transformed by \\(A\\).
+So then \\(\mathbf{x}\\) is \\(\mathbf{y}\\) transformed by \\(A^{-1}\\). Many
+matrices don't have inverses, so this is a brittle operation in a sense. The
+"adjoint" of \\(A\\) (often written \\(A^{\*}\\)) works like this,
 
 \\[
 \begin{align\*}
@@ -27,73 +24,64 @@ this way:
 \end{align\*}
 \\]
 
-...where "\\(\cdot\\)" is just the inner product (dot product) defined for a
-vector space.  This can be done for any complex valued matrix[^1].
+where "\\(\cdot\\)" is the familiar inner product between vectors. This can be
+done for any complex valued matrix[^1].
 
-There's a reason I placed the "\\(=\\)" (in the first system of equations) in
-the same horizontal position as the "\\(\cdot\\)" (in the second system).  So
-too for the "\\(\implies\\)" and the "\\(=\\)" in the second. They're
-positioned similarly because they seem to play similar roles in either example.
-Between the examples, we have the following analogues:
+So why compare the two?  If you squint a little, the two expressions are
+similar, just with different operations in different places.  We see "\\(=\\)" in the
+matrix inverse example in the same place that we see "\\(\cdot\\)" in the
+adjoint example.  Same thing for "\\(\iff\\)" and "\\(=\\)".  Here's a table of
+the related operations:
 
 \\[
 \begin{array}{r|c|c}
-  \text{action} & A^{-1} & A^{*} \\\\
+  \text{matrix} & A^{-1} & A^{*} \\\\
   \hline
   \text{comparison} & = & \cdot \\\\
   \hline
-  \text{relation} & \implies & =
+  \text{equivalence} & \iff & =
 \end{array}
 \\]
 
-More explicitly, it seems that inverses establish a bi-directional relationship
-between equalities through implication[^2].  On the other hand, adjoints
-establish a bi-directional relationship between dot products through equality
-(by showing how those dot products can be equal).
+Equalities in the matrix inverse example are related through bi-implication.
+Inner products in the adjoint example are related through equality.  The algebra
+looks similar in either example and suggests something interesting about the
+inner product: that it behaves like a kind of comparison.
 
-It never occurred to me quite this way before.  The idea of equality and the
-dot product seem closely related.  Equality answers the question, "Are these
-things *the same*?  Yes or no?"  Dot products answer the question, "Are these
-things *similar*?  Answer as you please (between \\(0\\) and \\(|\mathbf{x}|
-|\mathbf{y}|\cos \theta\\))[^3]."  In that sense, the dot product is really like a
-more communicative kind of equality comparison.
+It's worth thinking of equality and the inner product as being related in this
+way.  Equality answers the question, "Are these things *the same*?  Yes or no?"
+Inner products answer the question, "Are these things *similar*?  Answer anywhere
+between \\(-|\mathbf{x}||\mathbf{y}|\\) and \\(|\mathbf{x}||\mathbf{y}|\\)."
+The inner product is really like a more expressive kind of equality.
 
-In linear algebra, everything seems to generalize a more basic concept.  Those
-generalizations admit a much broader range of behaviors that could occur
-between objects that we're working with. The dot product generalizes equality.
-Even the basic constituents of linear algebra (vectors) sort of generalize the
+In linear algebra, everything generalizes a more basic concept.  Those
+generalizations admit a much broader range of behaviors between objects.  The
+inner product generalizes equality.  Even vectors themselves generalize the
 concept of individual values (scalars).
 
 Another generalization is the singular value decomposition (SVD).  The
-eigen-decomposition can be viewed as a special case of the SVD for normal
-matrices[^4].  But if your matrix isn't that nice, don't worry!  You can still
-do SVD for literally any complex (or real) valued matrix and get something with
-many of the same qualities.  It's just that SVD sometimes also coincides with
-the eigen-decomposition which is more limited.  Maybe that's the SVD
-periodically poking its head out from the ocean of high dimensionality.
+eigen-decomposition can be viewed as a special case of the SVD for positive
+semi-definite matrices[^2].  But as with the inverse, many matrices don't have
+an eigen-decomposition.  In that case, you can still do SVD (for any complex or
+real valued matrix) and get something with many of the same qualities.
 
-On some level, this speaks to the utility of linear algebra in the context of
-machine learning.  Linear algebra, and related topics like tensor calculus, are
-systems that generalize processes into high dimensions where much more
-interesting things are possible.  That's a nice analogy for comparing tasks
-that are easily performed by computers to those easily performed by humans.
-What's the difference between those things?  Well, in a way, it's the
-dimensionality! There's much more detail in the "real" world (more dimensions).
-If you want exact answers, they're hard to find and often not that interesting.
+It's no surprise then that linear algebra is so central to machine learning.
+Linear algebra is a system that generalizes processes into high dimensions
+where much more interesting things are possible.  That's a nice analogy for
+comparing tasks that are easily performed by computers to those easily
+performed by humans.  What's the difference between those things?  In a way,
+it's the dimensionality.  There's much more detail in the "real" world (more
+dimensions).  If you want exact answers, they're hard to find and often not
+that interesting.
 
-Put another way, yes you can check for exact equality between high dimensional
-vectors, but is that really all that useful?  That's like doubting if one apple
-could taste as good as another if it's made up of different atoms.  The notion
-of strict equality covers so little of the semantic territory that is possible
-with a high dimensional vector.  Why not ask a question that always yields more
-information?  Why not take the dot product? Likewise, why get hung up on not
-having the inverse when you can have the adjoint?
+You can check for exact equality between high dimensional vectors, but is that
+really all that useful?  The notion of strict equality covers so little of the
+semantic territory that is possible between vectors.  Why not ask a question
+that always yields more information?  Why not take the inner product?  Why get
+hung up on not having the inverse when you can have the adjoint?
 
 [^1]: And, by extension, any real-valued matrix \\(A\\) has an adjoint
   \\(A^T\\) (its transpose).
-[^2]: Technically, bi-implication.  It's of course not the case that we can
-  infer \\(Q \implies P\\) from \\(P \implies Q\\).  But the original matrix
-  \\(A\\) can be applied to both sides to "reverse the inverse".
-[^3]: ...and with a nice smooth curve too!
-[^4]: A "normal" matrix in this context means one that commutes with its
-  conjugate transpose (\\( A^{\*}A = AA^{\*} \\)).
+[^2]: For "normal" matrices more generally, meaning ones that commute with
+  their conjugate transpose (\\( A^{\*}A = AA^{\*} \\)), the singular values are
+  the absolute values of the eigenvalues.
