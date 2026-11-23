@@ -8,18 +8,28 @@ body {
 /* header and footer areas */
 .menu { padding: 0; }
 .menu li { display: inline-block; }
-.article-meta, .menu a {
+.menu a {
   text-decoration: none;
-  background: #eee;
-  padding: 5px;
-  border-radius: 5px;
+  /*background: #eee;*/
+  /*padding: 0px;*/
+  /*border-radius: 5px;*/
+}
+.menu li:not(:last-child)::after {
+  content: " | ";
 }
 .menu, .article-meta, footer { text-align: center; }
-.title { font-size: 1.1em; }
+h1 {
+  font-size: 2em;
+  margin: 0.5em;
+}
+h2.author, h2.date {
+  font-size: 1.25em;
+  margin: 0em;
+}
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
-  color: #ddd;
+  color: #bbb;
 }
 
 /* code */
