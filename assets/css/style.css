@@ -74,9 +74,14 @@ body.dark { color: var(--dark-fg); }
 body.dark #sun { stroke: var(--dark-muted); }
 body.dark #moon { stroke: var(--dark-fg); }
 
+/*
+ * Zoom scales the toggles, their strokes, and the spacing between them
+ * together, so the controls can be resized without redrawing the icons.
+ */
 #color-toggle, #width-toggle {
   float: left;
   cursor: pointer;
+  zoom: 1.15;
 }
 
 /*
@@ -156,9 +161,10 @@ h2.date {
 }
 
 /*
- * Rules take the surrounding text color, and the fade on the nav and footer
- * rules is a mask rather than a gradient between palette colors. Both hold up
- * in dark mode and under extensions like Dark Reader without overrides.
+ * Rules take the surrounding text color, and the nav and footer rules are
+ * softened with opacity rather than a separate palette color, matching the
+ * slash between the header controls. Both hold up in dark mode and under
+ * extensions like Dark Reader without overrides.
  */
 hr {
   border: 0;
@@ -166,10 +172,7 @@ hr {
   background: currentColor;
   height: 1px;
 }
-nav hr, footer hr {
-  -webkit-mask-image: linear-gradient(to right, transparent 0, black 20%);
-  mask-image: linear-gradient(to right, transparent 0, black 20%);
-}
+nav hr, footer hr { opacity: 0.35; }
 
 .footnotes hr { display: none; }
 .footnotes ol { padding-left: 1.1em; }
