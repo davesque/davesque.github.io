@@ -1,65 +1,55 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Adjoints, Inverses, and AIs | davesque.github.io</title><link rel=stylesheet href=https://davesque.github.io/css/style.min.deb62b8c746bf7e22920cff1c4beecf75a6c9b546cb2192670916500bf032686.css><script async src="https://www.googletagmanager.com/gtag/js?id=G-5MZ08VGDGY"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-5MZ08VGDGY")</script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload=renderMathInElement(document.body)></script></head><body><nav><div id=color-toggle title="Toggle day/night mode"><svg id="sun" width="20" height="30" stroke-width="2.44"><g transform="translate(10 15) scale(0.615) translate(-15 -15)"><circle cx="15" cy="15" r="10"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(0)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(45)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(90)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(135)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(180)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(225)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(270)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(315)" stroke-width="3.25"/></g></svg><svg id="moon" width="14" height="30" stroke-width="2.44"><g transform="translate(7 15) scale(0.615) translate(-9.2 -16.55)"><path d="M15 3a12 12 0 000 24A17 17 0 0115 3" stroke-linecap="round" stroke-linejoin="round" transform-origin="15 15" transform="rotate(-15)"/></g></svg></div><div id=width-toggle title="Toggle full page width"><svg id="width-narrow" width="22" height="30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="7" x2="9" y2="23"/><line x1="13" y1="7" x2="13" y2="23"/><line x1="1" y1="15" x2="6" y2="15"/><polyline points="3.5,12.5 6,15 3.5,17.5"/><line x1="21" y1="15" x2="16" y2="15"/><polyline points="18.5,12.5 16,15 18.5,17.5"/></svg><svg id="width-wide" width="20" height="30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1.5" y1="7" x2="1.5" y2="23"/><line x1="18.5" y1="7" x2="18.5" y2="23"/><line x1="5" y1="15" x2="15" y2="15"/><polyline points="7.5,12.5 5,15 7.5,17.5"/><polyline points="12.5,12.5 15,15 12.5,17.5"/></svg></div><script src=https://davesque.github.io/js/colorToggle.min.39200872c5b26ef75b45321db53adf1657d93963dff437a3b98dcd399ec208b8.js></script><script src=https://davesque.github.io/js/widthToggle.min.5e90d4349d9aadb07180d8529aed15a74d55acab74749895d4f95c7119ac0723.js></script><ul class=menu><li><a href=/>davesque.github.io</a></li></ul><hr></nav><div class=article-meta><h2 class=date>February 28, 2023</h2><h1><span class=title>Adjoints, Inverses, and AIs</span></h1></div><main><p>I&rsquo;ve been doing some reading about &ldquo;adjoints&rdquo; which are often contrasted with
-&ldquo;inverses&rdquo; in mathematics. Here&rsquo;s a simple example illustrating the behavior
-of a matrix inverse:</p><p>\[
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Adjoints, Inverses, and AIs | davesque.github.io</title><link rel=stylesheet href=https://davesque.github.io/css/style.min.deb62b8c746bf7e22920cff1c4beecf75a6c9b546cb2192670916500bf032686.css><script async src="https://www.googletagmanager.com/gtag/js?id=G-5MZ08VGDGY"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-5MZ08VGDGY")</script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css integrity=sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0 crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js integrity=sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4 crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload=renderMathInElement(document.body)></script></head><body><nav><div id=color-toggle title="Toggle day/night mode"><svg id="sun" width="20" height="30" stroke-width="2.44"><g transform="translate(10 15) scale(0.615) translate(-15 -15)"><circle cx="15" cy="15" r="10"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(0)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(45)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(90)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(135)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(180)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(225)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(270)" stroke-width="3.25"/><line x1="15" y1="26" x2="15" y2="28" stroke-linecap="round" transform-origin="15 15" transform="rotate(315)" stroke-width="3.25"/></g></svg><svg id="moon" width="14" height="30" stroke-width="2.44"><g transform="translate(7 15) scale(0.615) translate(-9.2 -16.55)"><path d="M15 3a12 12 0 000 24A17 17 0 0115 3" stroke-linecap="round" stroke-linejoin="round" transform-origin="15 15" transform="rotate(-15)"/></g></svg></div><div id=width-toggle title="Toggle full page width"><svg id="width-narrow" width="22" height="30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="7" x2="9" y2="23"/><line x1="13" y1="7" x2="13" y2="23"/><line x1="1" y1="15" x2="6" y2="15"/><polyline points="3.5,12.5 6,15 3.5,17.5"/><line x1="21" y1="15" x2="16" y2="15"/><polyline points="18.5,12.5 16,15 18.5,17.5"/></svg><svg id="width-wide" width="20" height="30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1.5" y1="7" x2="1.5" y2="23"/><line x1="18.5" y1="7" x2="18.5" y2="23"/><line x1="5" y1="15" x2="15" y2="15"/><polyline points="7.5,12.5 5,15 7.5,17.5"/><polyline points="12.5,12.5 15,15 12.5,17.5"/></svg></div><script src=https://davesque.github.io/js/colorToggle.min.39200872c5b26ef75b45321db53adf1657d93963dff437a3b98dcd399ec208b8.js></script><script src=https://davesque.github.io/js/widthToggle.min.5e90d4349d9aadb07180d8529aed15a74d55acab74749895d4f95c7119ac0723.js></script><ul class=menu><li><a href=/>davesque.github.io</a></li></ul><hr></nav><div class=article-meta><h2 class=date>February 28, 2023</h2><h1><span class=title>Adjoints, Inverses, and AIs</span></h1></div><main><p>Here&rsquo;s a simple example showing the behavior of a matrix inverse:</p><p>\[
 \begin{align*}
 A\mathbf{x} &= \mathbf{y} \\
-\implies \mathbf{x} &= A^{-1}\mathbf{y}
+\iff \mathbf{x} &= A^{-1}\mathbf{y}
 \end{align*}
-\]</p><p>We&rsquo;re just seeing that \(A^{-1}\) undoes the transformation done by \(A\)
-to \(\mathbf{x}\) to get \(\mathbf{y}\). This is only something that&rsquo;s
-possible for &ldquo;nice&rdquo; (non-singular) matrices. Better hope your matrix is nice.
-By contrast, the &ldquo;adjoint&rdquo; of \(A\) (often denoted \(A^{*}\)) works in
-this way:</p><p>\[
+\]</p><p>We&rsquo;re seeing that \(\mathbf{y}\) is \(\mathbf{x}\) transformed by \(A\).
+So then \(\mathbf{x}\) is \(\mathbf{y}\) transformed by \(A^{-1}\). Many
+matrices don&rsquo;t have inverses, so this is a brittle operation in a sense. The
+&ldquo;adjoint&rdquo; of \(A\) (often written \(A^{*}\)) works like this,</p><p>\[
 \begin{align*}
 A\mathbf{x} &\cdot \mathbf{y} \\
 = \mathbf{x} &\cdot A^{*}\mathbf{y}
 \end{align*}
-\]</p><p>&mldr;where &ldquo;\(\cdot\)&rdquo; is just the inner product (dot product) defined for a
-vector space. This can be done for any complex valued matrix<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</p><p>There&rsquo;s a reason I placed the &ldquo;\(=\)&rdquo; (in the first system of equations) in
-the same horizontal position as the &ldquo;\(\cdot\)&rdquo; (in the second system). So
-too for the &ldquo;\(\implies\)&rdquo; and the &ldquo;\(=\)&rdquo; in the second. They&rsquo;re
-positioned similarly because they seem to play similar roles in either example.
-Between the examples, we have the following analogues:</p><p>\[
+\]</p><p>where &ldquo;\(\cdot\)&rdquo; is the familiar inner product between vectors. This can be
+done for any complex valued matrix<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</p><p>So why compare the two? If you squint a little, the two expressions are
+similar, just with different operations in different places. We see &ldquo;\(=\)&rdquo; in the
+matrix inverse example in the same place that we see &ldquo;\(\cdot\)&rdquo; in the
+adjoint example. Same thing for &ldquo;\(\iff\)&rdquo; and &ldquo;\(=\)&rdquo;. Here&rsquo;s a table of
+the related operations:</p><p>\[
 \begin{array}{r|c|c}
-\text{action} & A^{-1} & A^{*} \\
+\text{matrix} & A^{-1} & A^{*} \\
 \hline
 \text{comparison} & = & \cdot \\
 \hline
-\text{relation} & \implies & =
+\text{equivalence} & \iff & =
 \end{array}
-\]</p><p>More explicitly, it seems that inverses establish a bi-directional relationship
-between equalities through implication<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. On the other hand, adjoints
-establish a bi-directional relationship between dot products through equality
-(by showing how those dot products can be equal).</p><p>It never occurred to me quite this way before. The idea of equality and the
-dot product seem closely related. Equality answers the question, &ldquo;Are these
-things <em>the same</em>? Yes or no?&rdquo; Dot products answer the question, &ldquo;Are these
-things <em>similar</em>? Answer as you please (between \(0\) and \(|\mathbf{x}|
-|\mathbf{y}|\cos \theta\))<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup>.&rdquo; In that sense, the dot product is really like a
-more communicative kind of equality comparison.</p><p>In linear algebra, everything seems to generalize a more basic concept. Those
-generalizations admit a much broader range of behaviors that could occur
-between objects that we&rsquo;re working with. The dot product generalizes equality.
-Even the basic constituents of linear algebra (vectors) sort of generalize the
+\]</p><p>Equalities in the matrix inverse example are related through bi-implication.
+Inner products in the adjoint example are related through equality. The algebra
+looks similar in either example and suggests something interesting about the
+inner product: that it behaves like a kind of comparison.</p><p>It&rsquo;s worth thinking of equality and the inner product as being related in this
+way. Equality answers the question, &ldquo;Are these things <em>the same</em>? Yes or no?&rdquo;
+Inner products answer the question, &ldquo;Are these things <em>similar</em>? Answer anywhere
+between \(-|\mathbf{x}||\mathbf{y}|\) and \(|\mathbf{x}||\mathbf{y}|\).&rdquo;
+The inner product is really like a more expressive kind of equality.</p><p>In linear algebra, everything generalizes a more basic concept. Those
+generalizations admit a much broader range of behaviors between objects. The
+inner product generalizes equality. Even vectors themselves generalize the
 concept of individual values (scalars).</p><p>Another generalization is the singular value decomposition (SVD). The
-eigen-decomposition can be viewed as a special case of the SVD for normal
-matrices<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup>. But if your matrix isn&rsquo;t that nice, don&rsquo;t worry! You can still
-do SVD for literally any complex (or real) valued matrix and get something with
-many of the same qualities. It&rsquo;s just that SVD sometimes also coincides with
-the eigen-decomposition which is more limited. Maybe that&rsquo;s the SVD
-periodically poking its head out from the ocean of high dimensionality.</p><p>On some level, this speaks to the utility of linear algebra in the context of
-machine learning. Linear algebra, and related topics like tensor calculus, are
-systems that generalize processes into high dimensions where much more
-interesting things are possible. That&rsquo;s a nice analogy for comparing tasks
-that are easily performed by computers to those easily performed by humans.
-What&rsquo;s the difference between those things? Well, in a way, it&rsquo;s the
-dimensionality! There&rsquo;s much more detail in the &ldquo;real&rdquo; world (more dimensions).
-If you want exact answers, they&rsquo;re hard to find and often not that interesting.</p><p>Put another way, yes you can check for exact equality between high dimensional
-vectors, but is that really all that useful? That&rsquo;s like doubting if one apple
-could taste as good as another if it&rsquo;s made up of different atoms. The notion
-of strict equality covers so little of the semantic territory that is possible
-with a high dimensional vector. Why not ask a question that always yields more
-information? Why not take the dot product? Likewise, why get hung up on not
-having the inverse when you can have the adjoint?</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>And, by extension, any real-valued matrix \(A\) has an adjoint
-\(A^T\) (its transpose).&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Technically, bi-implication. It&rsquo;s of course not the case that we can
-infer \(Q \implies P\) from \(P \implies Q\). But the original matrix
-\(A\) can be applied to both sides to &ldquo;reverse the inverse&rdquo;.&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>&mldr;and with a nice smooth curve too!&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>A &ldquo;normal&rdquo; matrix in this context means one that commutes with its
-conjugate transpose (\( A^{*}A = AA^{*} \)).&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><hr><p>© David Sanders 2026 | <a href=https://github.com/davesque>github</a></p></footer></body></html>
+eigen-decomposition can be viewed as a special case of the SVD for positive
+semi-definite matrices<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. But as with the inverse, many matrices don&rsquo;t have
+an eigen-decomposition. In that case, you can still do SVD (for any complex or
+real valued matrix) and get something with many of the same qualities.</p><p>It&rsquo;s no surprise then that linear algebra is so central to machine learning.
+Linear algebra is a system that generalizes processes into high dimensions
+where much more interesting things are possible. That&rsquo;s a nice analogy for
+comparing tasks that are easily performed by computers to those easily
+performed by humans. What&rsquo;s the difference between those things? In a way,
+it&rsquo;s the dimensionality. There&rsquo;s much more detail in the &ldquo;real&rdquo; world (more
+dimensions). If you want exact answers, they&rsquo;re hard to find and often not
+that interesting.</p><p>You can check for exact equality between high dimensional vectors, but is that
+really all that useful? The notion of strict equality covers so little of the
+semantic territory that is possible between vectors. Why not ask a question
+that always yields more information? Why not take the inner product? Why get
+hung up on not having the inverse when you can have the adjoint?</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>And, by extension, any real-valued matrix \(A\) has an adjoint
+\(A^T\) (its transpose).&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>For &ldquo;normal&rdquo; matrices more generally, meaning ones that commute with
+their conjugate transpose (\( A^{*}A = AA^{*} \)), the singular values are
+the absolute values of the eigenvalues.&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></main><footer><hr><p>© David Sanders 2026 | <a href=https://github.com/davesque>github</a></p></footer></body></html>
