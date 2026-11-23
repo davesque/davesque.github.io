@@ -1,0 +1,25 @@
+davesque.github.io
+Copyright 2023-2026 David Sanders
+
+This repository contains material under different terms.
+
+Code
+----
+The site's code and configuration (layouts, assets, archetypes, config, and
+workflows) are licensed under the Apache License, Version 2.0.  See LICENSE.
+
+Content
+-------
+Everything under content/ (posts, pages, and any accompanying media) is NOT
+covered by the Apache License.  All rights are reserved.  See LICENSE-content.
+
+Third-party code
+----------------
+The templates under layouts/ are derived from the hugo-xmin theme by Yihui Xie
+(https://github.com/yihui/hugo-xmin), used under the MIT License.
+
+assets/css/style.css includes a short rule set from normalize.css by Nicolas
+Gallagher and Jonathan Neal (https://github.com/necolas/normalize.css), used
+under the MIT License.
+
+See LICENSE-third-party for the full text of both licenses.
