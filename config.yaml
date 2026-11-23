@@ -1,7 +1,6 @@
 baseURL: "https://davesque.github.io"
 languageCode: "en-us"
 title: "davesque.github.io"
-theme: "hugo-xmin"
 
 googleAnalytics: ""
 disqusShortname: ""
