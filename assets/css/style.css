@@ -51,6 +51,7 @@ body {
   padding-left: 1em;
   padding-right: 1em;
 }
+body.wide { max-width: none; }
 body .katex { font-size: 1.1em; }
 
 /*
@@ -66,16 +67,60 @@ body #moon {
   stroke: var(--muted);
   fill: none;
   display: inline-block;
-  margin-left: 5px;
+  margin-left: 3.2px;
 }
 
 body.dark { color: var(--dark-fg); }
 body.dark #sun { stroke: var(--dark-muted); }
 body.dark #moon { stroke: var(--dark-fg); }
 
-#color-toggle {
+#color-toggle, #width-toggle {
   float: left;
   cursor: pointer;
+}
+
+/*
+ * The width toggle shows both of its icons, like the day/night toggle, with
+ * the one for the current page width drawn in the text color and the other
+ * one muted.
+ */
+#width-toggle {
+  display: flex;
+  align-items: center;
+}
+
+/*
+ * A thin slash separates the width toggle from the day/night toggle. It is
+ * slanted, and thinner and taller than the bars in the width icons, so that
+ * it doesn't read as part of them, and it takes the text color so that it
+ * holds up under Dark Reader.
+ *
+ * The margins are tuned so that the ends of the slash sit the same distance
+ * from the moon on the left and from the first width icon on the right.
+ */
+#width-toggle::before {
+  content: "";
+  width: 1px;
+  height: 26px;
+  margin: 0 10.775px 0 10.225px;
+  background: currentColor;
+  opacity: 0.35;
+  transform: rotate(20deg);
+}
+#width-toggle svg {
+  stroke: var(--muted);
+  fill: none;
+}
+#width-wide { margin-left: 5px; }
+body.dark #width-toggle svg { stroke: var(--dark-muted); }
+body:not(.wide) #width-toggle #width-narrow,
+body.wide #width-toggle #width-wide {
+  stroke: currentColor;
+}
+
+/* Hide the width toggle when the window is too narrow for it to matter */
+@media (max-width: 740px) {
+  #width-toggle { display: none; }
 }
 nav hr {
   clear: both;
