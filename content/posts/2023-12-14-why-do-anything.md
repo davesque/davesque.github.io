@@ -1,7 +1,7 @@
 ---
 title: "Why Do Anything?"
 date: 2023-12-14T12:00:00-07:00
-draft: false
+draft: true
 ---
 
 As a creative person, there's a question that I've often grappled with.  Simply
