@@ -31,12 +31,20 @@ sub, sup {
 sub { bottom: -0.25em; }
 sup { top: -0.5em; }
 
+/*
+ * The page background goes on the root element rather than on body, which is
+ * only a 700px column. Extensions like Dark Reader give the root its own
+ * background, and a background on body would then show as a box around the
+ * column.
+ */
+html { background-color: var(--bg); }
+html:has(body.dark) { background-color: var(--dark-bg); }
+
 body {
   font-family: var(--serif);
   font-size: 1.1em;
   line-height: 1.55;
   color: var(--fg);
-  background-color: var(--bg);
 
   max-width: 700px;
   margin: auto;
@@ -61,10 +69,7 @@ body #moon {
   margin-left: 5px;
 }
 
-body.dark {
-  color: var(--dark-fg);
-  background-color: var(--dark-bg);
-}
+body.dark { color: var(--dark-fg); }
 body.dark #sun { stroke: var(--dark-muted); }
 body.dark #moon { stroke: var(--dark-fg); }
 
