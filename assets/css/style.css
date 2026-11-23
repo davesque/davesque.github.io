@@ -45,13 +45,18 @@ body {
 }
 body .katex { font-size: 1.1em; }
 
+/*
+ * The icons are outlines only. Leaving them unfilled, rather than filling them
+ * with the page background, keeps them correct under extensions like Dark
+ * Reader that recolor fills as if they were text.
+ */
 body #sun {
   stroke: var(--fg);
-  fill: var(--bg);
+  fill: none;
 }
 body #moon {
   stroke: var(--muted);
-  fill: var(--bg);
+  fill: none;
   display: inline-block;
   margin-left: 5px;
 }
@@ -60,17 +65,8 @@ body.dark {
   color: var(--dark-fg);
   background-color: var(--dark-bg);
 }
-body.dark nav hr, body.dark footer hr {
-  background: linear-gradient(to right, var(--dark-bg) 0, var(--dark-fg) 20%);
-}
-body.dark #sun {
-  stroke: var(--dark-muted);
-  fill: var(--dark-bg);
-}
-body.dark #moon {
-  stroke: var(--dark-fg);
-  fill: var(--dark-bg);
-}
+body.dark #sun { stroke: var(--dark-muted); }
+body.dark #moon { stroke: var(--dark-fg); }
 
 #color-toggle {
   float: left;
@@ -109,13 +105,20 @@ h2.date {
   font-weight: normal;
 }
 
+/*
+ * Rules take the surrounding text color, and the fade on the nav and footer
+ * rules is a mask rather than a gradient between palette colors. Both hold up
+ * in dark mode and under extensions like Dark Reader without overrides.
+ */
 hr {
   border: 0;
-  background: black;
+  color: inherit;
+  background: currentColor;
   height: 1px;
 }
 nav hr, footer hr {
-  background: linear-gradient(to right, var(--bg) 0, var(--fg) 20%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 20%);
+  mask-image: linear-gradient(to right, transparent 0, black 20%);
 }
 
 .footnotes hr { display: none; }
